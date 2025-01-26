@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+
+}
+
+header{
+    position: fixed;
+    top: 1rem;
+    left: 50%; /*brings the header to the center of the page but not by its own center */
+    transform: translateX(-50%); /* to center it completely add this code */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem; /* gap between the elements */
+    background-color: rgba(0, 0, 0, 0.90);
+    backdrop-filter: blur(8px); /* this is for glass effect*/
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 3rem; /* create for rounded corners */
+    z-index: 1000; /* to make sure this header stays on top of everything else */
+}
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-wrap: nowrap; /* because we have two words inside our logo and when the view point gets smaller the text is going to wrap, and this prevents it */
+    transition: 0.3s ease-in-out; /* transition for the hover effect */
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.navlinks {
+    display: flex;
+    gap: 2rem;
+}
+li a{ /* li a used when you want to target any kinds of list */
+    position: relative;
+    color: white;
+    font-weight: 300;
+}
+li a::before{
+    position: absolute;
+    content: '';
+    width: 0;
+    left: 0;
+    height: 5px;
+    top: 25px;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right, rgb(0,157,255), rgb(255,0,255));
+}
+li a:hover::before{
+    width: 100%;
+}
+.visit-btn {
+    background-color: yellowgreen;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    transition: 0.3s ease-in-out;
+    
+}
+.visit-btn:hover{
+    transform: scale(1.1);
+}
+section{
+    min-height: 100vh;
+    padding: 8rem 12%; /*8rem for the top and bottom and 12% on sides*/
+    width: 100%;
+    position: relative;
+    
+}
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+.jal{
+    width: 25vw;
+    border-radius: 50%;
+}
+.info-box{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.info-box h3{
+    font-size: 1.8rem;
+    font-weight: 500;
+   
+}
+.info-box h1{
+    font-size: 3rem;
+    font-weight: 600;
+}
+.info-box span{
+    background: linear-gradient(to right, rgb(0,157,255), rgb(255,0,255)); 
+    background-clip: text;/* this will put the color inside the text*/
+    color: transparent;
+    font-size: 2rem;
+}
+.btn-group{
+    display: flex;
+    gap: 1rem;
+}
+.btn {
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid;
+    cursor: pointer;
+    font-weight: 500;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+}
+.btn:hover{
+    background-color: hsl(0, 0%, 0%);
+    color: white;
+}
+.socials {
+    display: flex;
+    gap: 1.5rem;
+}
+.socials i{
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.socials i:hover{
+    transform: scale(1.1);
+}
+.experience-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+.sectiontitle{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+.grid-card{
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 3rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: left;
+    transition: 0.2s ease-in-out;
+}
+.grid-card:hover{
+    transform: scale(1.02);
+    background-color: black;
+    color: white;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+.potpot{
+    width: 30vw;
+    border-radius: 2rem;
+}
+.grid-card i{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.grid-card span{
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(to right, rgb(0,157,255), rgb(255,0,255));  
+    background-clip: text;/* this will put the color inside the text*/
+    color: transparent;
+}
+::-webkit-scrollbar{
+    width: 20px;
+}
+::-webkit-scrollbar-track{
+    background-color: #eee7e7;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to right, rgb(179, 182, 184), rgb(170, 164, 170));
+}
+.project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(10px,2fr));
+    gap: 2rem;
+}
+.project-card{
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    border: 2px solid black;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.project-card:hover{
+    background-color: black;
+    color: white;
+    transform: translateY(-10px)scale(1.02);
+}
+.project-pic{
+    width: 25vw;
+    border-radius: 1rem;
+}
+.project-card:hover .btn{
+    border: 2px solid white;
+    color: white;
+}
+.project-card:hover .btn:hover{
+    border: 2px solid white;
+    background-color: white;
+    color: black;
+}
+.project-card h3{
+    font-size: 2rem;
+    font-weight: 500;
+}
